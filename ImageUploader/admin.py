@@ -8,6 +8,6 @@ from .models import PrescriptionImage
 @admin.register(PrescriptionImage)
 class ImageAdmin(admin.ModelAdmin):
     # list_display = ['Username', "UserId","image"]
-    list_display = ['Username', "image"]
+    list_display = ['Username', "user_email", "uploaded_at", "image"]
     
 

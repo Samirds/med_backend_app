@@ -5,8 +5,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 
 
-# Create your views here.
-
+# # Create your views here.
 
 class UploadImage(APIView):
     def post(self, request, format=None):

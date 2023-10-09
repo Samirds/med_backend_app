@@ -10,7 +10,7 @@ class Image_serializer(serializers.ModelSerializer):
     class Meta:
         model = PrescriptionImage
         #fields = ['Username', 'UserId',"image"]
-        fields = ['Username', "image"]
+        fields = ['Username', "user_email", "uploaded_at", "image"]
        
         
 

@@ -3,6 +3,9 @@ from . ImageUploadSerializer import Image_serializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import BasicAuthentication
+
 
 
 # # Create your views here.
@@ -22,6 +25,10 @@ class UploadImage(APIView):
     
 
 class ShowUploadedImage(APIView):
+
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
+
     def get(self,request, format=None):
         model = PrescriptionImage.objects.all()
         serializers = Image_serializer(model, many=True)

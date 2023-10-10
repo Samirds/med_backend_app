@@ -4,6 +4,8 @@ from rest_framework. views import APIView
 from .user_serializers import RegistrationSerializers, LoginSerializer, userSerialization
 from django.contrib.auth import authenticate, login
 from rest_framework_simplejwt.tokens import RefreshToken
+# from rest_framework.permissions import IsAuthenticated, IsAdminUser
+# from rest_framework.authentication import BasicAuthentication
 from . models import CustomUser
 
 
@@ -74,6 +76,9 @@ class Login(APIView):
 #         return Response(serializers.errors, status=status.HTTP_401_UNAUTHORIZED)
 
 class Profile(APIView):
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
+    
 
     def get(self,request, format=None):
         model = CustomUser.objects.all()

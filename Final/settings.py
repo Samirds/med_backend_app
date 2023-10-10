@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-tneqo(o-$&z_#&0b%41@)989&d5(#uqn-#efxyg3v&5(e-dzu3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', '192.168.1.2', 'sam1d.pythonanywhere.com']
+#ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', '192.168.1.2', 'sam1d.pythonanywhere.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -130,8 +131,32 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# # -------------------------------------------------------------------- Here we are storing Images ----------------------------------------------------------
+# MEDIA_URL = "/Media/"
+# #MEDIA_ROOT = BASE_DIR/"Media"  
+# MEDIA_ROOT = os.path.join(BASE_DIR, "Media")
+
+
+# #----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = '/Media/'
+
+if DEBUG:
+
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+else:
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
+
 
 
 
@@ -141,12 +166,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# -------------------------------------------------------------------- Here we are storing Images ----------------------------------------------------------
-
-MEDIA_ROOT = BASE_DIR/"Media"
-MEDIA_URL = "/Media/"
-
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 # JWT SETTINGS

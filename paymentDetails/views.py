@@ -3,6 +3,9 @@ from rest_framework import status
 from rest_framework. views import APIView
 from . payment_serializer import pamentSerializer 
 from . models import Payment_Detils
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import BasicAuthentication
+
 
 
 # Create your views here.
@@ -18,6 +21,10 @@ class paymentView(APIView):
 
 
 class paymentGet(APIView):
+
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAdminUser]
+
     def get(self,request, format=None):
         model = Payment_Detils.objects.get(payment_transaction_id=self.request.data['payment_transaction_id'])
         serializers = pamentSerializer(model)

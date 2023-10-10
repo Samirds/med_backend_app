@@ -4,7 +4,7 @@ from django.db import models
 class PrescriptionImage(models.Model):
 
     def nameFile(instance,filename):
-         return '/'.join(['UserPrescriptionImage', str(instance.Username), filename])
+         return '/'.join(['UserPrescriptionImage', str(instance.user_email), filename])
 
 
 

@@ -3,6 +3,8 @@ from rest_framework import status
 from rest_framework. views import APIView
 from . models import Order_Details
 from . order_serializer import orderSerializer
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import BasicAuthentication
 
 
 
@@ -29,6 +31,9 @@ class order_View(APIView):
 
 
 class order_View_Get(APIView):
+
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         Email = Order_Details.objects.all()

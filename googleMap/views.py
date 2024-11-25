@@ -1,25 +1,4 @@
-<<<<<<< HEAD
-# from django.shortcuts import render
-# from django.http import HttpResponse
-# from rest_framework. views import APIView
-# from rest_framework.response import Response
-# from rest_framework import status
-# from . serializers import userSerializers, saveUserAddressSerialiser
-# import requests
-# from .models import SaveUserAddress
 
-# # Create your views here.
-
-
-# class getLatLang(APIView):   #this method should not be followed correct way is class getAddressList(APIView)
-#     def post(self, request, format=None):
-#         serializers = userSerializers(data = request.data)
-#         if serializers.is_valid():
-#             res = requests.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='
-#                                +serializers["lat"].value+', '
-#                                +serializers["lang"].value+
-#                                '&key='+"")
-=======
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework. views import APIView

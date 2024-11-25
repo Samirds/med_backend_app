@@ -18,7 +18,7 @@
 #             res = requests.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='
 #                                +serializers["lat"].value+', '
 #                                +serializers["lang"].value+
-#                                '&key='+"AIzaSyCwyUkHyJh6exkjkrYHRwWpUSslSklp3YQ")
+#                                '&key='+"")
 =======
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -40,7 +40,7 @@ class getLatLang(APIView):   #this method should not be followed correct way is 
                                +serializers["lat"].value+', '
                                +serializers["lang"].value+
                                '&key='+"API KEY")
->>>>>>> 85e7e95fc2d37e61710daa51e27f8710fbaa9642
+
            
 #             #return Response(res, status = status.HTTP_200_OK)
 #             return HttpResponse(res)
